@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <title>Nexos</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+        <script src="./node_modules/jquery/dist/jquery.js"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="./node_modules/@popperjs/core/dist/umd/popper.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular-resource.js"></script>
+        <script src="components.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <tabs>
+            <pane title="Tarjetas">
+                <div ng-controller="tarjeta-controller">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Información de tarjetas</div>
+                      
+                        <table class="table">
+                            <tr>
+                                <th>PAN</th>
+                                <th>Titular</th> 
+                                <th>Cédula</th>
+                                <th>Tipo</th>
+                                <th>Estado</th>
+                                <th>Teléfono</th>
+                              </tr>
+                              <tr ng-repeat="tarjeta in tarjetas">
+                                <td>{{tarjeta.validation_number}}</td>
+                                <td>{{tarjeta.owner}}</td> 
+                                <td>{{tarjeta.document}}</td>
+                                <td>{{tarjeta.type}}</td>
+                                <td>{{tarjeta.stade}}</td>
+                                <td>{{tarjeta.phone}}</td>
+                              </tr>
+                        </table>
+                    </div>
+                  </div>
+            </pane>
+            <pane title="Transacciones">
+              <div ng-controller="transaccion-controller">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Información de transacciones</div>
+                  
+                    <table class="table">
+                        <tr>
+                            <th>PAN</th>
+                            <th>Referencia</th> 
+                            <th>Total Compra</th>
+                            <th>Dirección</th>
+                            <th>Fecha</th>
+                          </tr>
+                          <tr ng-repeat="transaccion in transacciones">
+                            <td>{{transaccion.pan}}</td>
+                            <td>{{transaccion.referencia}}</td> 
+                            <td>{{transaccion.totalCompra}}</td>
+                            <td>{{transaccion.direccion}}</td>
+                            <td>{{transaccion.fecha}}</td>
+                          </tr>
+                    </table>
+                </div>
+              </div>
+            </pane>
+          </tabs>
+    </body>
+</html>

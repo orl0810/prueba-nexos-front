@@ -1,0 +1,9 @@
+.panel {
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.panel-heading {
+    text-align: center;
+}
